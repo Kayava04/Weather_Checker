@@ -16,6 +16,7 @@ namespace Weather_Checker
                 case "Few clouds": //(невелика хмарність)
                 case "Scattered clouds": //(розсіяна хмарність)
                 case "Broken clouds": //(розірвана хмарність)
+                case "Light intensity show": //(сонячність)
                     return new BitmapImage(new Uri("/Images/Weather_fewClouds.png", UriKind.Relative));
                 case "Rain": //(дощ)
                     return new BitmapImage(new Uri("/Images/Weather_rain.png", UriKind.Relative));
