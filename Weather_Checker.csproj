@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\ProgramIcon.ico</ApplicationIcon>
+    <StartupObject></StartupObject>
+	<AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Map.png" />
+    <None Remove="Images\Weather_snow.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\ProgramIcon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Map.png" />
+    <Resource Include="Images\ProgramIcon.ico" />
+    <Resource Include="Images\ProgramIcon_png.png" />
+    <Resource Include="Images\Search.png" />
+    <Resource Include="Images\Weahter_snow.png" />
+    <Resource Include="Images\Weather_clearSky.png" />
+    <Resource Include="Images\Weather_fewClouds.png" />
+    <Resource Include="Images\Weather_freezingRain.png" />
+    <Resource Include="Images\Weather_heavyRain.png" />
+    <Resource Include="Images\Weather_heavySnow.png" />
+    <Resource Include="Images\Weather_lightRain.png" />
+    <Resource Include="Images\Weather_mist.png" />
+    <Resource Include="Images\Weather_ocClouds.png" />
+    <Resource Include="Images\Weather_rain.png" />
+    <Resource Include="Images\Weather_snow.png" />
+    <Resource Include="Images\Weather_thunderstorm.png" />
+    <Resource Include="Images\Weather_tornado.png" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,211 @@
+﻿<Window x:Class="Weather_Checker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Weather_Checker"
+        mc:Ignorable="d"
+        Height="500"
+        Width="400"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+
+    <!--// Main Window \\-->
+    <Border
+        CornerRadius="10"
+        BorderThickness="0">
+
+        <Border.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="CornflowerBlue" Offset="0.0"/>
+                <GradientStop Color="LightPink" Offset="0.9"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Grid>
+
+            <!--// Window Markup \\-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--// Title Bar \\-->
+            <Border
+                Grid.Row="0"
+                Background="Transparent"
+                BorderThickness="0"
+                MouseDown="Window_MouseDown">
+
+                <Grid>
+
+                    <StackPanel
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Left">
+
+                        <TextBlock
+                            Text="Weather Checker"
+                            FontSize="16"
+                            Foreground="White"
+                            FontFamily="Bahnschrift SemiBold"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Margin="10,4,0,0"/>
+
+                    </StackPanel>
+
+                    <StackPanel
+                        Grid.Column="2"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+
+                        <Button
+                            Content="–"
+                            Style="{StaticResource ModernMinimizeButton}"
+                            Click="Minimize_ButtonClick"/>
+
+                        <Button
+                            Content="✕"
+                            Style="{StaticResource ModernCloseButton}"
+                            Click="Close_ButtonClick"/>
+
+                    </StackPanel>
+
+                </Grid>
+
+            </Border>
+
+            <!--// Search Panel \\-->
+            <Border
+                Grid.Row="1"
+                Background="Transparent"
+                BorderThickness="0">
+
+                <StackPanel
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+
+                    <TextBox x:Name="CityTextBox"
+                        Style="{StaticResource ModernSearchLine}"
+                        TextChanged="City_TextChanged"
+                        KeyDown="Submit"/>
+
+                    <Button
+                        Style="{StaticResource SearchButton}"
+                        Click="SearchButton_Click"/>
+
+                </StackPanel>
+            </Border>
+
+            <!--// Clock Panel \\-->
+            <Border
+                Grid.Row="2"
+                Background="Transparent"
+                BorderThickness="0">
+
+                <TextBlock x:Name="Clock"
+                    Text=""
+                    Foreground="White"
+                    FontSize="25"
+                    FontWeight="SemiBold"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Padding="0,0,0,2.5"/>
+
+            </Border>
+
+            <!--// Info Panel \\-->
+            <Border
+                Grid.Row="3"
+                Background="Transparent"
+                BorderThickness="0">
+
+                <Grid>
+
+                    <!--// Markup \\-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--// Display Info \\-->
+                    <StackPanel
+                        Width="200"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Stretch">
+
+                        <TextBlock x:Name="Location"
+                            Height="85"
+                            Width="180"
+                            Margin="15,40,0,0"
+                            Text=""
+                            Foreground="White"
+                            FontSize="15"
+                            FontFamily="Bahnschrift"/>
+
+                        <TextBlock x:Name="Weather"
+                            Height="85"
+                            Width="180"
+                            Margin="15,10,0,0"
+                            Text=""
+                            Foreground="White"
+                            FontSize="25"
+                            FontFamily="Bahnschrift SemiBold"/>
+
+                        <TextBlock x:Name="DescriptionData"
+                            Height="85"
+                            Width="180"
+                            Margin="15,40,0,0"
+                            Text=""
+                            Foreground="White"
+                            FontSize="15"
+                            FontFamily="Bahnschrift SemiBold"/>
+
+                        <TextBlock x:Name="wInfo"
+                            Height="26"
+                            Width="180"
+                            Margin="15,-144,0,0"
+                            Text=""
+                            Foreground="White"
+                            FontSize="20"
+                            FontFamily="Bahnschrift SemiBold"/>
+
+                    </StackPanel>
+
+                    <Image x:Name="WeatherIcon"
+                        Grid.Column="1"
+                        RenderOptions.BitmapScalingMode="Fant"
+                        Height="180"
+                        Width="180"
+                        Margin="0,0,15,50"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Visibility="Collapsed"/>
+
+                    <!--// Display Startup Icon \\-->
+                    <Image x:Name="StartupIcon"
+                        Grid.ColumnSpan="2"
+                        Source="/Images/Map.png"
+                        RenderOptions.BitmapScalingMode="Fant"
+                        Height="350"
+                        Width="400"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="0,0,-125,0"
+                        Visibility="Visible"/>
+
+                </Grid>
+
+            </Border>
+
+        </Grid>
+
+    </Border>
+
+</Window>
