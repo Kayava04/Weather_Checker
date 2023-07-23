@@ -17,14 +17,13 @@ namespace Weather_Checker
             WebRequest request = WebRequest.Create(apiUrl);
             request.Method = "GET";
             request.ContentType = "application/x-www-urlencoded";
+            string answer = string.Empty;
             try
             {
-                WebResponse response = await request.GetResponseAsync();
-                string answer = string.Empty;
+                using (WebResponse response = await request.GetResponseAsync())
                 using (Stream s = response.GetResponseStream())
                 using (StreamReader reader = new StreamReader(s))
                     answer = await reader.ReadToEndAsync();
-                response.Close();
                 WeatherData WD = JsonConvert.DeserializeObject<WeatherData>(answer);
                 return WD;
             }

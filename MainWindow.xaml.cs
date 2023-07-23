@@ -43,7 +43,7 @@ namespace Weather_Checker
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            GetInfo();
+            GetInfoAsync();
         }
 
         private void Clock_TextBox()
@@ -64,7 +64,7 @@ namespace Weather_Checker
             });
         }
 
-        private async void GetInfo()
+        private async void GetInfoAsync()
         {
             WeatherDataFetcher weatherInfoFetcher = new WeatherDataFetcher();
             WeatherData WD = await weatherInfoFetcher.GetWeatherDataAsync(CityName);
@@ -104,7 +104,7 @@ namespace Weather_Checker
         {
             if (e.Key == Key.Enter)
             {
-                GetInfo();
+                GetInfoAsync();
                 CityTextBox.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
                 Keyboard.ClearFocus();
             }
