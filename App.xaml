@@ -6,14 +6,17 @@
 
     <Application.Resources>
         <ResourceDictionary>
+
             <ResourceDictionary.MergedDictionaries>
-                <!--// Themes \\-->
+                <!--// Styles \\-->
                 <ResourceDictionary Source="Themes/MinimizeButtonStyle.xaml"/>
                 <ResourceDictionary Source="Themes/CloseButtonStyle.xaml"/>
                 <ResourceDictionary Source="Themes/SearchButtonStyle.xaml"/>
                 <ResourceDictionary Source="Themes/SearchTextBoxStyle.xaml"/>
                 <ResourceDictionary Source="Themes/OKButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+
         </ResourceDictionary>
     </Application.Resources>
+
 </Application>

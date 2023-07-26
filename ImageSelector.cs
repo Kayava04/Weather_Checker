@@ -3,9 +3,9 @@ using System.Windows.Media.Imaging;
 
 namespace Weather_Checker
 {
-    public class ImageSelector
+    public static class ImageSelector
     {
-        public BitmapImage Select(string descriptionText)
+        public static BitmapImage Select(string descriptionText)
         {
             switch (descriptionText)
             {

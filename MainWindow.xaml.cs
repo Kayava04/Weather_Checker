@@ -84,7 +84,7 @@ namespace Weather_Checker
                                        $"\nWind speed | {Math.Round(WD.Wind.WindSpeed, 1)} km/h";
                 StartupIcon.Visibility = Visibility.Collapsed;
                 WeatherIcon.Visibility = Visibility.Visible;
-                WeatherIcon.Source = new ImageSelector().Select(wInfo.Text);
+                WeatherIcon.Source = ImageSelector.Select(wInfo.Text);
             }
             else
             {
@@ -92,7 +92,7 @@ namespace Weather_Checker
                 Location.Text = Weather.Text = wInfo.Text = DescriptionData.Text = Clock.Text = "";
                 WeatherIcon.Visibility = Visibility.Collapsed;
                 StartupIcon.Visibility = Visibility.Visible;
-                StartupIcon.Source = new ImageSelector().Select(null);
+                StartupIcon.Source = ImageSelector.Select(null);
                 errorWindow = new ErrorWindow();
                 errorWindow.ErrorMessage.Text = WIFI_ERROR;
                 errorWindow.Show();
