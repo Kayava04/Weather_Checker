@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using Weather_Checker.Data;
 
-namespace Weather_Checker
+namespace Weather_Checker.Views
 {
     public partial class MainWindow : Window
     {

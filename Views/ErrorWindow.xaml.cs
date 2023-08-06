@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Weather_Checker
+namespace Weather_Checker.Views
 {
     public partial class ErrorWindow : Window
     {
